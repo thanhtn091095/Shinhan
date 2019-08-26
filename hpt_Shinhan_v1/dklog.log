@@ -1,0 +1,82 @@
+>>>>> Java connector logging started 08/12/2019 at 03:26:37.941 GMT
+
+CODEBASE                : ?
+OS version              : Windows 10 10.0
+java.vm                 : Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, version 12.0.1
+java.home               : C:\Program Files\Java\jdk-12.0.1
+sun.boot.class.path     : null
+java.ext.dir            : null
+java.classpath          : C:\Users\duyl\eclipse-workspace\hpt_Shinhan\bin;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\Jace.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\log4j.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\p8cjares.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\stax-api.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\tika-core-1.17.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\xlxpScanner.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\xlxpScannerUtils.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\db2jcc-db2jcc4.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\cmbsdk81.jar;C:\Users\duyl\eclipse-workspace\hpt_Shinhan\lib\db2jcc.jar
+sun.boot.library.path   : C:\Program Files\Java\jdk-12.0.1\bin
+java.library.path       : C:\Program Files\Java\jdk-12.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk-12.0.1/bin/server;C:/Program Files/Java/jdk-12.0.1/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Users\duyl\AppData\Local\Microsoft\WindowsApps;;C:\Users\duyl\AppData\Local\Programs\Microsoft VS Code\bin;C:\Windows\system32;;.
+java.io.tmpdir          : C:\Users\duyl\AppData\Local\Temp\
+sun.io.unicode.encoding : UnicodeLittle
+user.language           : en
+user.timezone           : Asia/Bangkok
+user.dir                : C:\Users\duyl\eclipse-workspace\hpt_Shinhan
+
+[ WARN] cmblogconfig.properties (the log configuration file) can not be found or an error was encountered while it was being read. (?ibmcmconfig.properties)
+
+
+
+[EXC]: 08/12/2019 at 03:26:38.003 GMT @ HAS-DUYL-NB (172.16.0.140); com.ibm.mm.sdk.common.DKUsageError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: duyl (C:\Users\duyl) @ C:\Users\duyl\eclipse-workspace\hpt_Shinhan
+[THD]: main ( 5e265ba4 )
+[THG]: main = { main }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:listDataSources
+[MSG]: DGL0394A: Error in ::FileReader [cmbicmsrvs.ini (The system cannot find the file specified)]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.listDataSources(DKDatastoreICM.java:6671)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:1196)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+
+
+
+[ERR]: 08/12/2019 at 03:26:59.504 GMT @ HAS-DUYL-NB (172.16.0.140);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: duyl (C:\Users\duyl) @ C:\Users\duyl\eclipse-workspace\hpt_Shinhan
+[THD]: main ( 5e265ba4 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-java.io.FileNotFoundException: cmbicmenv.ini (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:155)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:110)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3073)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+
+
+
+[EXC]: 08/12/2019 at 03:26:59.506 GMT @ HAS-DUYL-NB (172.16.0.140); com.ibm.mm.sdk.common.DKDatastoreAccessError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: duyl (C:\Users\duyl) @ C:\Users\duyl\eclipse-workspace\hpt_Shinhan
+[THD]: main ( 5e265ba4 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+
+
+
+[ERR]: 08/12/2019 at 03:26:59.507 GMT @ HAS-DUYL-NB (172.16.0.140);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: duyl (C:\Users\duyl) @ C:\Users\duyl\eclipse-workspace\hpt_Shinhan
+[THD]: main ( 5e265ba4 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-    ERROR:  The connect() operation has failed.  Before exiting the DKDatastoreICM.connect() operation, state changes will be rolled back.  Error caught: "DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]"
+
+
+[ERR]: 08/12/2019 at 03:26:59.507 GMT @ HAS-DUYL-NB (172.16.0.140);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: duyl (C:\Users\duyl) @ C:\Users\duyl\eclipse-workspace\hpt_Shinhan
+[THD]: main ( 5e265ba4 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-com.ibm.mm.sdk.common.DKDatastoreAccessError: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+
+
