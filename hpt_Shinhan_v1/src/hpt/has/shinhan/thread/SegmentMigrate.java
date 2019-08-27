@@ -85,7 +85,7 @@ public class SegmentMigrate extends Thread {
 				
 				String pathFull = HOST_GET_FILE + LIST_META_DATA.get(i).getProperty("FILEPATH");
 				
-				String dir = DownloadFileURL.DownloadFile(pathFull, CURRENT_DIRECTORY);
+				String dir = DownloadFileURL.DownloadFile1(pathFull, CURRENT_DIRECTORY, LIST_META_DATA.get(i).getProperty("MIMETYPE"));
 				
 				int del = 1;
 				
@@ -105,11 +105,12 @@ public class SegmentMigrate extends Thread {
 				}
 				else {
 					
-					file = new File(dir);
-					String output = CURRENT_DIRECTORY + "\\" + LIST_META_DATA.get(i).getProperty("FILENAME");
-					String encodestring = ConvertBase64.encodeFileToBase64Binary(file);
-					dir = ConvertBase64.writeBase64ToFile(encodestring, output, LIST_META_DATA.get(i).getProperty("MIMETYPE"));
-					file.delete();
+//					file = new File(dir);
+//					String output = CURRENT_DIRECTORY + "\\" + LIST_META_DATA.get(i).getProperty("FILENAME");
+//					String encodestring = ConvertBase64.encodeFileToBase64Binary(file);
+//					dir = ConvertBase64.writeBase64ToFile(encodestring, output, LIST_META_DATA.get(i).getProperty("MIMETYPE"));
+//					file.delete();
+					
 					file = new File(dir);
 					
 					String insert1 = QueryDataDB2.QueryStringInsertInput(input, LIST_META_DATA.get(i).getProperty("ITEM"), LIST_META_DATA.get(i).getProperty("DOCREFID"), LIST_META_DATA.get(i).getProperty("CUSTID"), pathFull, file.length(), del, 3, "true");
