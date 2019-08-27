@@ -38,11 +38,11 @@ public class Migration {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Handler(uri, username, password, optionalJAASStanzaName, objectName, doc_class, root, fol_class, host, port, data, user, pass, jdbcClassName1, url_file, url_log + CPEDB, userlog, passlog, jdbcClassName2, 2);
+		Handler(uri, username, password, optionalJAASStanzaName, objectName, doc_class, root, fol_class, host, port, data, user, pass, jdbcClassName1, url_file, url_log + CPEDB, userlog, passlog, jdbcClassName2, 2, "24-SEP-07", "05-FEB-18", 100);
 		
 	}
 	
-	public static void Handler(String _url_filenet, String _user_filenet, String _pass_filenet, String _optional_filenet, String _obj_filenet, String _class_doc, String _root_filenet, String _fol_filenet, String _url_oracle, String _port_oracle, String _data_name, String _user_oracle, String _pass_oracle, String _driver_oracle, String _url_get_file, String _url_DB2_Log, String _user_log, String _pass_log, String _driver_db2,  int _volume) {
+	public static void Handler(String _url_filenet, String _user_filenet, String _pass_filenet, String _optional_filenet, String _obj_filenet, String _class_doc, String _root_filenet, String _fol_filenet, String _url_oracle, String _port_oracle, String _data_name, String _user_oracle, String _pass_oracle, String _driver_oracle, String _url_get_file, String _url_DB2_Log, String _user_log, String _pass_log, String _driver_db2,  int _volume, String from, String to, int rownum) {
 		
 		try {
 			
@@ -50,7 +50,7 @@ public class Migration {
 			
 			Connection conPro = ConnectionOracle.CreateConnection(_url_oracle, _port_oracle, _data_name, _user_oracle, _pass_oracle, _driver_oracle);
 			
-			String sqlInfo = QueryOracle.QueryStringOracle("24-SEP-07", "05-FEB-18");
+			String sqlInfo = QueryOracle.QueryStringOracle1(from, to, rownum);
 			
 			List<MetaData> lstPro = QueryOracle.ExcuteQuerySelect(conPro, sqlInfo);
 			
@@ -63,7 +63,7 @@ public class Migration {
 			ConnectionOracle.CloseConnection(conPro);
 		}
 		catch(Exception ex) {
-			System.out.println("hpt.has.shinhan.filenet.Migration.Handler.Error Handler1: " + ex);
+			System.out.println("hpt.has.shinhan.filenet.Migration.Handler.Error Handler: " + ex);
 		}
 	}
 
