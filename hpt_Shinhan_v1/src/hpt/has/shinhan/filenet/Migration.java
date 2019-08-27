@@ -3,7 +3,6 @@ package hpt.has.shinhan.filenet;
 import java.sql.Connection;
 import java.util.List;
 
-import hpt.has.shinhan.db2.ConnectionDB2;
 import hpt.has.shinhan.oracle.ConnectionOracle;
 import hpt.has.shinhan.oracle.QueryOracle;
 import hpt.has.shinhan.thread.DivideList;
@@ -32,13 +31,13 @@ public class Migration {
 	static String jdbcClassName2 = "com.ibm.db2.jcc.DB2Driver";
 	static String url_log="jdbc:db2://10.148.50.61:55000/";
 	static String CPEDB = "CPEDB";	
-	static String userlog="db2ecm1";
-	static String passlog="Shinhan01";
+	static String userlog = "db2ecm1";
+	static String passlog = "Shinhan01";
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Handler(uri, username, password, optionalJAASStanzaName, objectName, doc_class, root, fol_class, host, port, data, user, pass, jdbcClassName1, url_file, url_log + CPEDB, userlog, passlog, jdbcClassName2, 2, "24-SEP-07", "05-FEB-18", 100);
+		Handler(uri, username, password, optionalJAASStanzaName, objectName, doc_class, root, fol_class, host, port, data, user, pass, jdbcClassName1, url_file, url_log + CPEDB, userlog, passlog, jdbcClassName2, 2, "24-09-2017", "05-02-2018", 100);
 		
 	}
 	

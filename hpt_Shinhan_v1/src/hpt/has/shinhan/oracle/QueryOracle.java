@@ -47,14 +47,14 @@ public class QueryOracle {
 		String sql = "SELECT boxid, appfrmno, apprefno, cif, create_dt, custid, custname, docdesc, docid, docrefid, filename, filepath, item, loanagrno, mimetype, scanneddate, update_dt, uploadchannel FROM icm_document WHERE";
 		try {
 			
-			sql += " (create_dt >= to_date('" + from + "', 'DD-MM-YYYY') AND create_dt <= to_date('" + to + "', 'DD-MM-YYYY')";
+			sql += " (create_dt >= to_date('" + from + "', 'DD-MM-YYYY') AND create_dt <= to_date('" + to + "', 'DD-MM-YYYY'))";
 			
 			if(rownum >= 0) {
 				
 				sql += " and ROWNUM <= " + rownum + "";
 			}
 			
-			
+			System.out.println("hpt.has.shinhan.oracle.QueryOracle.QueryStringOracle.Info: " + sql);
 		}
 		catch(Exception e) {
 			System.out.println("hpt.has.shinhan.oracle.QueryOracle.QueryStringOracle.Error: " + e);
