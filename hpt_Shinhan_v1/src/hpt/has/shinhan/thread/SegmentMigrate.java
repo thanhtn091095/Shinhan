@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.filenet.api.core.ObjectStore;
 
-import hpt.has.shinhan.base64.ConvertBase64;
 import hpt.has.shinhan.db2.ConnectionDB2;
 import hpt.has.shinhan.db2.GenerateUniqueIDUsingGUID;
 import hpt.has.shinhan.db2.QueryDataDB2;

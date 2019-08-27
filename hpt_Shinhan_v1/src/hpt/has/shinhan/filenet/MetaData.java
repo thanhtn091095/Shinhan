@@ -1,5 +1,7 @@
 package hpt.has.shinhan.filenet;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,7 +30,7 @@ public class MetaData{
 	List<String> LIST_META_DATA;
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 
 		MetaData m  = new MetaData("123", "123", "123", "123", "123", "123", new Date(), "123", "123", "123", "123", "123", "123", "123", "123", "123", new Date(), new Date());
@@ -38,8 +40,11 @@ public class MetaData{
 		
 		m.setList();
 		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+		Date date = (Date)formatter.parse("12-December-2012");
+		
 		m.setProperty("456", "DOCREFID");
-		m.setProperty(new Date(2019, 01, 01), "SCANNEDDATE");
+		m.setProperty(date, "SCANNEDDATE");
 		
 		System.out.println("hpt.has.shinhan.filenet.MetaData.main.Info DOCREFID: " + m.getProperty("DOCREFID"));
 		System.out.println("hpt.has.shinhan.filenet.MetaData.main.Info SCANNEDDATE: " + m.getProperty("SCANNEDDATE"));
@@ -164,6 +169,7 @@ public class MetaData{
 		 }
 	}
 	
+	@SuppressWarnings("unchecked")
 	public <M> M getProperty(String key) 
 	{
 		 try {
