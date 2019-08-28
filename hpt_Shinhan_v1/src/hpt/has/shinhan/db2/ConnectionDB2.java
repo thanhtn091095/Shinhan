@@ -30,6 +30,7 @@ public class ConnectionDB2 {
 		System.out.println("sample user = 'db2inst1'");
 		System.out.println("sample password = 'cfc4you'");
 		System.out.println("Ready for a new command");
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("jdbcClassName = ");
 		String _jdbcClassName = scanner.nextLine();

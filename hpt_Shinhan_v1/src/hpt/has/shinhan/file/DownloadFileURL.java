@@ -235,5 +235,4 @@ public class DownloadFileURL {
 	    	}
 			return extension;
 		}
-
 }

@@ -3,8 +3,6 @@ package hpt.has.shinhan.filenet;
 import java.io.File;
 import java.io.OutputStreamWriter;
 import java.sql.Connection;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -122,6 +120,7 @@ public class UploadFilenet {
 //		System.out.println("sample user_file = 'db2inst1'");
 //		System.out.println("sample password_file = 'cfc4you'");
 //		System.out.println("Ready for a new command");
+		@SuppressWarnings({ "unused", "resource" })
 		Scanner scanner = new Scanner(System.in);
 //		System.out.print("jdbcClassName = ");
 //		String _jdbcClassName = scanner.nextLine();
@@ -527,11 +526,11 @@ public class UploadFilenet {
             
             result = "" + rr.get_Id();
             
-            System.out.println("hpt.has.shinhan.filenet.UploadFilenet.UploadDocument2.Info Upload Document successful");
+            System.out.println("hpt.has.shinhan.filenet.UploadFilenet.UploadDocument2.Info Upload Document successful: " + result);
         }
         catch (Exception e) {
 			// TODO: handle exception
-	    	System.out.println("hpt.has.shinhan.filenet.UploadFilenet.UploadDocument2.Error UploadDocument: " + e);
+	    	System.out.println("hpt.has.shinhan.filenet.UploadFilenet.UploadDocument2.Error UploadDocument2: " + e);
 		}	
 		return result;
 	}

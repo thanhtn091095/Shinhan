@@ -29,6 +29,7 @@ public class ConnectFilenet {
 	       // Get object stores for domain.
 	       ObjectStoreSet osSet = domain.get_ObjectStores();
 
+	       @SuppressWarnings("rawtypes")
 	       Iterator osIter = osSet.iterator();	       
 	       while (osIter.hasNext()) 
 	       {

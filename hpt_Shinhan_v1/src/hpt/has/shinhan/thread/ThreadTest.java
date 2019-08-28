@@ -33,7 +33,7 @@ public class ThreadTest {
 			lst.add(p);
 		}
 		
-		int size = lst.size();
+		//int size = lst.size();
 		
 		List<PropertiesTemplate> first = new ArrayList<>(lst.subList(0, 250));
 		List<PropertiesTemplate> second = new ArrayList<>(lst.subList(250, 500));

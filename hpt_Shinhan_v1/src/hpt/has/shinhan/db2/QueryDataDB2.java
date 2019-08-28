@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import hpt.has.shinhan.filenet.PropertiesTemplate;
+import hpt.has.shinhan.oracle.StructureFolder;
 
 public class QueryDataDB2 {
 	
@@ -418,6 +419,41 @@ public class QueryDataDB2 {
 		
 	}
 	
+	public static String QueryStringStructureFolder() {
+		
+		String sql = "SELECT id, docid, doc_type, filenet_folder, filenet_folder_id, stage FROM SVFC.STRUCTURE_FOLDER";			
+		try {
+			
+			sql += " order by docid";
+			
+		}
+		catch(Exception ex) {
+			System.out.println("hpt.has.shinhan.db2.QueryDataDB2.QueryStringStructureFolder.Error QueryStringStructureFolder: " + ex);
+		}
+		return sql;
+		
+	}
+	
+	public static List<StructureFolder> ExcuteQueryStructureFolder(Connection con, String query) {
+		
+		List<StructureFolder> lst = new ArrayList<StructureFolder>();	
+		try {
+			
+			Statement sqlStatement = con.createStatement();
+			
+			ResultSet resSet = sqlStatement.executeQuery(query);		
+
+			while(resSet.next()) {				
+				StructureFolder f = new StructureFolder(resSet.getInt("id"), resSet.getInt("docid"), resSet.getString("doc_type"), resSet.getString("filenet_folder"), resSet.getString("filenet_folder_id"), resSet.getString("stage"));
+				lst.add(f);
+			}				
+		}
+		catch(Exception ex) {
+			System.out.println("hpt.has.shinhan.db2.QueryDataDB2.ExcuteQueryStructureFolder.Error ExcuteQueryStructureFolder: " + ex);
+		}
+		return lst;
+	}
+	
 	public static String QueryStringInsertInput(String id, String item, String doc, String cust, String path, long size, int isExist, int isQueryPath, String query) {
 		
 		String sql = "INSERT INTO SVFC.INPUT_LOGS (ID, ITEM, DOCREFID, CUSTID, PATH, SIZE, IS_EXIST, CREATED_DATE, CREATED, IS_QUERY_PATH, SQL_PATH) VALUES";
@@ -432,6 +468,25 @@ public class QueryDataDB2 {
 		}
 		catch(Exception ex) {
 			System.out.println("hpt.has.shinhan.db2.QueryDataDB2.QueryStringInsertInput.Error QueryStringInsertInput: " + ex);
+		}
+		return sql;
+		
+	}
+	
+	public static String QueryStringInsertInput1(String id, String item, String doc, String cust, String path, long size, int isExist, String AppName, String Segment, String docId, Date doc_created, String message) {
+		
+		String sql = "INSERT INTO SVFC.INPUT_LOGS (ID, ITEM, DOCREFID, CUSTID, PATH, SIZE, IS_EXIST, CREATED_DATE, CREATED, SEGMENT, DOCID, DOC_DATE, EXCEPTION) VALUES";
+		
+		
+		try {			
+
+			sql += " ('" + id + "', '" + item + "', '" + doc + "', '" + cust + "', '" +  path + "', '" + size + "', " + isExist;
+			
+			sql += ", '" + Time.parseTimeToString(new Date()) + "', '" + AppName + "' , '" + Segment + "' , '" + docId + "' , '" + Time.parseTimeToString1(doc_created) + "' , '" + message + "')";
+			
+		}
+		catch(Exception ex) {
+			System.out.println("hpt.has.shinhan.db2.QueryDataDB2.QueryStringInsertInput1.Error QueryStringInsertInput1: " + ex);
 		}
 		return sql;
 		
@@ -458,6 +513,31 @@ public class QueryDataDB2 {
 		}
 		catch(Exception ex) {
 			System.out.println("hpt.has.shinhan.db2.QueryDataDB2.QueryStringInsertOutput.Error QueryStringInsertOutput: " + ex);
+		}
+		return sql;		
+	}
+	
+	public static String QueryStringInsertOutput1(String id, String ecm_id, String input_id, Boolean is_folder, String AppName, String docrefid, String message, int isupdate) {
+		
+		String sql = "INSERT INTO SVFC.OUTPUT_LOGS (ID, ECM_ID, IS_FOLDER, INPUT_ID, CREATED_DATE, CREATED, DOCREFID, EXCEPTION, ISCACHE) VALUES";
+		
+		
+		try {
+			
+			int isFolder = 0;
+			
+			if(is_folder == true) {
+				
+				isFolder = 1;
+			}
+
+			sql += " ('" + id + "', '" + ecm_id + "', " + isFolder + ", '" + input_id + "'";
+			
+			sql += ", '" + Time.parseTimeToString(new Date()) + "', '" + AppName + "', '" + docrefid + "', '" + message + "', " + isupdate + ")";
+			
+		}
+		catch(Exception ex) {
+			System.out.println("hpt.has.shinhan.db2.QueryDataDB2.QueryStringInsertOutput1.Error QueryStringInsertOutput1: " + ex);
 		}
 		return sql;		
 	}

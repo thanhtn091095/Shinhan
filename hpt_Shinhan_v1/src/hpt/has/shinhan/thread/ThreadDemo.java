@@ -44,11 +44,11 @@ public class ThreadDemo extends Thread {
 		
 		for(int i = 0; i < _lstPro.size(); i++) {
 			
-			Boolean bol = CreateFolder.createFolder(object_store, root_filenet, _lstPro.get(i).CustID, fol_filenet);
+			CreateFolder.createFolder(object_store, root_filenet, _lstPro.get(i).CustID, fol_filenet);
 			
 			File file = new File(".\\target\\100089921.pdf");
 			
-			String id = UploadFilenet.UploadDocument1(object_store, file, class_filenet, docname, root_filenet + "/" + _lstPro.get(i).CustID, _lstPro.get(i));
+			UploadFilenet.UploadDocument1(object_store, file, class_filenet, docname, root_filenet + "/" + _lstPro.get(i).CustID, _lstPro.get(i));
 		}
 		
 		ConnectFilenet.CloseConnection();		
