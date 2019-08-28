@@ -7,7 +7,7 @@ public class DivideList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<Integer> mainList = new ArrayList();
+		List<Integer> mainList = new ArrayList<Integer>();
 		for(int i = 0; i < 250001; i++)
 		{
 			mainList.add(i+1);

@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.util.List;
 
 import com.filenet.api.core.ObjectStore;
-
 import hpt.has.shinhan.db2.ConnectionDB2;
 import hpt.has.shinhan.db2.GenerateUniqueIDUsingGUID;
 import hpt.has.shinhan.db2.QueryDataDB2;
@@ -70,12 +69,14 @@ public class SegmentMigrate extends Thread {
 	}
 	
 	@Override
-	public void run() {
-		
+	public void run() {		
+		UploadFileToFilenet();
+	}
+	
+	public void UploadFileToFilenet() {		
 		try {
 			
 			ObjectStore object_store = ConnectFilenet.OpenConnection(URL_FILENET, USER_NAME_FILENET, PASS_WORD_FILENET, OPTIONAL_FILENET, OBJECT_STORE);
-			
 			Connection conLog = ConnectionDB2.ConnectDB2(DRIVER_DB2, URL_LOG, USER_NAME_LOG, PASS_WORD_LOG);
 			// TODO Auto-generated method stub
 			for(int i = 0; i < LIST_META_DATA.size(); i++) {
@@ -95,31 +96,25 @@ public class SegmentMigrate extends Thread {
 				
 				if(dir == null) {
 					
-					del = 0;					
+					del = 0;		
+					
 					String insert1 = QueryDataDB2.QueryStringInsertInput(input, LIST_META_DATA.get(i).getProperty("ITEM"), LIST_META_DATA.get(i).getProperty("DOCREFID"), LIST_META_DATA.get(i).getProperty("CUSTID"), pathFull, 0, del, 0, "false");
-					QueryDataDB2.ExcuteQueryInsert(conLog, insert1);					
+					QueryDataDB2.ExcuteQueryInsert(conLog, insert1);	
+					
 					String insert2 = QueryDataDB2.QueryStringInsertOutput(out, null, input, create);					
 					QueryDataDB2.ExcuteQueryInsert(conLog, insert2);
 					
 				}
 				else {
-					
-//					file = new File(dir);
-//					String output = CURRENT_DIRECTORY + "\\" + LIST_META_DATA.get(i).getProperty("FILENAME");
-//					String encodestring = ConvertBase64.encodeFileToBase64Binary(file);
-//					dir = ConvertBase64.writeBase64ToFile(encodestring, output, LIST_META_DATA.get(i).getProperty("MIMETYPE"));
-//					file.delete();
-					
+										
 					file = new File(dir);
 					
-					String insert1 = QueryDataDB2.QueryStringInsertInput(input, LIST_META_DATA.get(i).getProperty("ITEM"), LIST_META_DATA.get(i).getProperty("DOCREFID"), LIST_META_DATA.get(i).getProperty("CUSTID"), pathFull, file.length(), del, 3, "true");
-					
+					String insert1 = QueryDataDB2.QueryStringInsertInput(input, LIST_META_DATA.get(i).getProperty("ITEM"), LIST_META_DATA.get(i).getProperty("DOCREFID"), LIST_META_DATA.get(i).getProperty("CUSTID"), pathFull, file.length(), del, 1, "true");
 					QueryDataDB2.ExcuteQueryInsert(conLog, insert1);
 					
-					String id = UploadFilenet.UploadDocument2(object_store, file, OBJECT_TYPE, LIST_META_DATA.get(i).getProperty("FILENAME"), ROOT_FOLDER + "/" + LIST_META_DATA.get(i).getProperty("CUSTID"), LIST_META_DATA.get(i));
+					String ecm_id = UploadFilenet.UploadDocument2(object_store, file, OBJECT_TYPE, LIST_META_DATA.get(i).getProperty("FILENAME"), ROOT_FOLDER + "/" + LIST_META_DATA.get(i).getProperty("CUSTID"), LIST_META_DATA.get(i));
 		            
-					String insert2 = QueryDataDB2.QueryStringInsertOutput(out, id, input, create);
-					
+					String insert2 = QueryDataDB2.QueryStringInsertOutput(out, ecm_id, input, create);					
 					QueryDataDB2.ExcuteQueryInsert(conLog, insert2);
 					
 					file.delete();
@@ -127,14 +122,11 @@ public class SegmentMigrate extends Thread {
 				
 			}
 			ConnectFilenet.CloseConnection();
-			ConnectionDB2.CloseBD2(conLog);
-			//ConnectionDB2.CloseBD2(conPath);
-			
+			ConnectionDB2.CloseBD2(conLog);			
 		}
 		catch(Exception e) {
 			
 			System.out.println("hpt.has.shinhan.thread.SegmentMigrate.run.Error run: " + e);
 		}
-	}	
-
+	}
 }

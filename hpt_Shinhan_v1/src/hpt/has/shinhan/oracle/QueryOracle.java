@@ -49,7 +49,7 @@ public class QueryOracle {
 			
 			sql += " (create_dt >= to_date('" + from + "', 'DD-MM-YYYY') AND create_dt <= to_date('" + to + "', 'DD-MM-YYYY'))";
 			
-			if(rownum >= 0) {
+			if(rownum > 0) {
 				
 				sql += " and ROWNUM <= " + rownum + "";
 			}
@@ -60,6 +60,45 @@ public class QueryOracle {
 			System.out.println("hpt.has.shinhan.oracle.QueryOracle.QueryStringOracle.Error: " + e);
 		}
 		return sql;
+	}
+	
+	public static String QueryStringUpdateOracle(String doc, String ecm) {
+		
+		String sql = "UPDATE icm_document SET";
+		
+		try {
+			
+			sql += " FILENET_OBJECT_ID = '" + ecm + "'";
+			
+			sql += " WHERE docrefid = '" + doc + "'";
+			
+			System.out.println("hpt.has.shinhan.oracle.QueryOracle.QueryStringUpdateOracle.Info: " + sql);
+		}
+		catch(Exception e) {
+			System.out.println("hpt.has.shinhan.oracle.QueryOracle.QueryStringUpdateOracle.Error: " + e);
+		}
+		return sql;
+	}
+	
+	public static Boolean ExcuteQueryUpdate(Connection con, String sql){
+				
+		try {
+			
+			Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			
+			int rset = st.executeUpdate(sql);
+			
+			if(rset > 0) 
+			{
+				return true;
+			}
+		}
+		catch(Exception e) {
+			System.out.println("hpt.has.shinhan.oracle.QueryOracle.ExcuteQuerySelect.Error: " + e);
+			return false;
+		}
+		
+		return false;
 	}
 	
 	public static List<MetaData> ExcuteQuerySelect(Connection con, String sql){

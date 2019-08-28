@@ -1,7 +1,6 @@
 package hpt.has.shinhan.db2;
 
 import java.util.Date;
-import java.util.UUID;
 
 public class Time {
 
@@ -44,6 +43,22 @@ public class Time {
 		} 
 		catch (Exception e) {
 			System.out.println("hpt.has.shinhan.db2.Time.parseTimeToString.Error parseTimeToString: " + e);
+		}
+		return result;
+	}
+	
+	public static String parseTimeToString1(Date date) {
+
+		String result = "";
+		try {
+
+			result = date.toString().trim();
+			
+			result += " 00:00:00.000";			
+			
+		} 
+		catch (Exception e) {
+			System.out.println("hpt.has.shinhan.db2.Time.parseTimeToString.Error parseTimeToString1: " + e);
 		}
 		return result;
 	}

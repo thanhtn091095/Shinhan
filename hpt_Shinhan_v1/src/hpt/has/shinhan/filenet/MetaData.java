@@ -13,8 +13,7 @@ public class MetaData{
 	String LOANAGRNO;
 	String DOCDESC;
 	String CUSTID;
-	String CUSTNAME;
-	Date SCANNEDDATE;
+	String CUSTNAME;	
 	String BOXID;
 	String MIMETYPE;
 	String FILEPATH;
@@ -24,8 +23,11 @@ public class MetaData{
 	String UPLOADCHANNEL;
 	String APPREFNO;
 	String FILENAME;
+	String FILENET_OBJECT_ID;
+	
 	Date CREATE_DT;
 	Date UPDATE_DT;
+	Date SCANNEDDATE;
 	
 	List<String> LIST_META_DATA;
 	
@@ -60,8 +62,7 @@ public class MetaData{
 		this.LOANAGRNO = _LOANAGRNO;
 		this.DOCDESC = _DOCDESC;
 		this.CUSTID = _CUSTID;
-		this.CUSTNAME = _CUSTNAME;
-		this.SCANNEDDATE = _SCANNEDDATE;
+		this.CUSTNAME = _CUSTNAME;		
 		this.BOXID = _BOXID;
 		this.MIMETYPE = _MIMETYPE;
 		this.FILEPATH = _FILEPATH;
@@ -71,8 +72,10 @@ public class MetaData{
 		this.UPLOADCHANNEL = _UPLOADCHANNEL;
 		this.APPREFNO = _APPREFNO;
 		this.FILENAME = _FILENAME;
+		
 		this.CREATE_DT = _CREATE_DT;
 		this.UPDATE_DT = _UPDATE_DT;
+		this.SCANNEDDATE = _SCANNEDDATE;
 	}
 
 	public void setList() {
@@ -158,6 +161,9 @@ public class MetaData{
 	                break;
 	            case "CREATE_DT":
 	            	this.CREATE_DT = (Date) value;
+	                break;	                
+	            case "FILENET_OBJECT_ID":
+	            	this.FILENET_OBJECT_ID = (String) value;
 	                break;
 	            default:
 	            	this.UPDATE_DT = (Date) value;
@@ -208,14 +214,16 @@ public class MetaData{
 	            case "FILENAME":
 	            	return (M) this.FILENAME;	                
 	            case "CREATE_DT":
-	            	return (M) this.CREATE_DT;	                
+	            	return (M) this.CREATE_DT;	 
+	            case "FILENET_OBJECT_ID":
+	            	return (M) this.FILENET_OBJECT_ID;	            	
 	            default:
 	            	return (M) this.UPDATE_DT;
 	        }
 		 }
 		 catch(Exception ex) {
 			 
-			 System.out.println("hpt.has.shinhan.filenet.MetaData.setProperty.Error: " + ex);
+			 System.out.println("hpt.has.shinhan.filenet.MetaData.getProperty.Error: " + ex);
 		 }
 		return null;
 	}

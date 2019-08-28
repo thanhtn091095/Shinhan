@@ -32,14 +32,9 @@ public class WriteTxtFile {
 			osw = new OutputStreamWriter(fos);
 			//osw.close();
 		} 
-		catch (FileNotFoundException e) {
+		catch (Exception e) {
 			  // File not found
-			  e.printStackTrace();System.out.println("hpt.has.shinhan.file.WriteTxtFile.OpenFileText.Error FileNotFoundException: " + e);
-		} 
-		catch (IOException ex) {
-			  // Error when writing to the file
-			 System.out.println("hpt.has.shinhan.file.WriteTxtFile.OpenFileText.Error IOException: " + ex);
-			
+			System.out.println("hpt.has.shinhan.file.WriteTxtFile.OpenFileText.Error OpenFileText: " + e);
 		}
 		
 		return osw;

@@ -33,11 +33,7 @@ public class CreateFolder {
 	        SearchSQL sqlObject = new SearchSQL();
 	        
 			String queryFolder = "SELECT Id, FolderName, Name, PathName FROM " + className + " WHERE FolderName = '" + fName + "'";
-	        
-//	        String queryFolder = "SELECT F.cmis:name AS name, F.cmis:objectId AS id FROM cmis:folder AS F WHERE name = '" + fName + "'";
-	        
-//	        String queryFolder = "SELECT [This], [BPMCustomerID], [ClassDescription], [ClbCreatorIndex], [ClbLastModifierIndex], [CmIndexingFailureCode], [CmIsMarkedForDeletion], [CmRetentionDate], [ContainerType], [Creator], [DateCreated], [DateLastModified], [FolderName], [Id], [IndexationId], [InheritParentPermissions], [IsHiddenContainer], [LastModifier], [LockOwner], [LockTimeout], [LockToken], [Name], [Owner], [PathName] FROM [Folder] WHERE [FolderName] = '12345678' OPTIONS(TIMELIMIT 180)";
-//			
+			
 			System.out.println("hpt.has.shinhan.filenet.CreateFolder.createFolder.Info: queryFolder: " + queryFolder);
 			
 			sqlObject.setQueryString(queryFolder);
@@ -46,12 +42,13 @@ public class CreateFolder {
 			RepositoryRowSet myRows = search.fetchRows(sqlObject, null, null, null);	
 
 			
+			@SuppressWarnings("rawtypes")
 			Iterator iter = myRows.iterator();
 			
 			Id Id = null;
 			String pathParent = fPath + "/" + fName;
-			while (iter.hasNext()) {
-				
+			
+			while (iter.hasNext()) {		
 				
 				RepositoryRow row = (RepositoryRow) iter.next();
 //				String Id = row.getProperties().get("Id").getStringValue();
@@ -82,14 +79,12 @@ public class CreateFolder {
 				
 				System.out.println("hpt.has.shinhan.filenet.CreateFolder.createFolder.Info: createFolder: Folder name: " + fName + " is exist");
 				return false;
-			}
-			      
+			}		      
 			
 		}
 		catch(Exception ex) {
 			
-			System.out.println("hpt.has.shinhan.filenet.CreateFolder.createFolder.Error: createFolder: " + ex);	
-			
+			System.out.println("hpt.has.shinhan.filenet.CreateFolder.createFolder.Error: createFolder: " + ex);			
 			
 			return false;
 		}
