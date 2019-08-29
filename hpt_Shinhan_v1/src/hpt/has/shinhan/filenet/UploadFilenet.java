@@ -474,7 +474,9 @@ public class UploadFilenet {
             ReferentialContainmentRelationship rr = curent_folder.file(doc_up, AutoUniqueName.AUTO_UNIQUE, doc_up.get_Name(), DefineSecurityParentage.DEFINE_SECURITY_PARENTAGE); 
             rr.save(RefreshMode.REFRESH);           
             
-            result = "" + rr.get_Id();
+            //result = "" + rr.get_Id();
+            
+            result = "" + doc_up.get_Id().toString();
             
             System.out.println("hpt.has.shinhan.filenet.UploadFilenet.UploadDocument1.Info Upload Document successful");
         }
@@ -524,7 +526,9 @@ public class UploadFilenet {
             ReferentialContainmentRelationship rr = curent_folder.file(doc_up, AutoUniqueName.AUTO_UNIQUE, doc_up.get_Name(), DefineSecurityParentage.DEFINE_SECURITY_PARENTAGE); 
             rr.save(RefreshMode.REFRESH);           
             
-            result = "" + rr.get_Id();
+            //result = "" + rr.get_Id();
+            
+            result = "" + doc_up.get_Id().toString();
             
             System.out.println("hpt.has.shinhan.filenet.UploadFilenet.UploadDocument2.Info Upload Document successful: " + result);
         }
