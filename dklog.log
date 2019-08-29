@@ -1,0 +1,512 @@
+>>>>> Java connector logging started 08/12/2019 at 03:25:22.104 GMT
+
+CODEBASE                : ?
+OS version              : Windows Server 2012 R2 6.3
+java.vm                 : Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_201
+java.home               : C:\Program Files\Java\jre1.8.0_201
+sun.boot.class.path     : C:\Program Files\Java\jre1.8.0_201\lib\resources.jar;C:\Program Files\Java\jre1.8.0_201\lib\rt.jar;C:\Program Files\Java\jre1.8.0_201\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_201\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_201\lib\jce.jar;C:\Program Files\Java\jre1.8.0_201\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_201\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_201\classes
+java.ext.dir            : null
+java.classpath          : C:\Users\vendor5\Desktop\UATConnect.jar
+sun.boot.library.path   : C:\Program Files\Java\jre1.8.0_201\bin
+java.library.path       : C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\Program Files (x86)\nodejs\;.
+java.io.tmpdir          : C:\Users\vendor5\AppData\Local\Temp\4\
+sun.io.unicode.encoding : UnicodeLittle
+user.language           : en
+user.timezone           : Asia/Bangkok
+user.dir                : C:\Users\vendor5
+
+[ WARN] cmblogconfig.properties (the log configuration file) can not be found or an error was encountered while it was being read. (?ibmcmconfig.properties)
+
+
+
+[EXC]: 08/12/2019 at 03:25:23.198 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKUsageError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:listDataSources
+[MSG]: DGL0394A: Error in ::FileReader [cmbicmsrvs.ini (The system cannot find the file specified)]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.listDataSources(DKDatastoreICM.java:6671)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:1196)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[EXC]: 08/12/2019 at 03:25:27.120 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKLogonFailure # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:logon
+[MSG]: DGL0394A: Error in : DKDatastoreICM.connect; [SERVER = icmnlsdb, USERID = db2inst1]; ICM7127: The user ID is not defined or the password is not valid. (STATE) : [LS RC = 7127]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.logon(DKDatastoreICM.java:3679)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3273)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 03:25:27.120 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-60:16c83dbf42c:X8000-?-    ERROR:  The connect() operation has failed.  Before exiting the DKDatastoreICM.connect() operation, state changes will be rolled back.  Error caught: "DGL0394A: Error in : DKDatastoreICM.connect; [SERVER = icmnlsdb, USERID = db2inst1]; ICM7127: The user ID is not defined or the password is not valid. (STATE) : [LS RC = 7127]"
+
+
+[ERR]: 08/12/2019 at 03:25:27.120 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-60:16c83dbf42c:X8000-?-com.ibm.mm.sdk.common.DKLogonFailure: DGL0394A: Error in : DKDatastoreICM.connect; [SERVER = icmnlsdb, USERID = db2inst1]; ICM7127: The user ID is not defined or the password is not valid. (STATE) : [LS RC = 7127]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.logon(DKDatastoreICM.java:3679)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3273)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+>>>>> Java connector logging started 08/12/2019 at 03:27:09.810 GMT
+
+CODEBASE                : ?
+OS version              : Windows Server 2012 R2 6.3
+java.vm                 : Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_201
+java.home               : C:\Program Files\Java\jre1.8.0_201
+sun.boot.class.path     : C:\Program Files\Java\jre1.8.0_201\lib\resources.jar;C:\Program Files\Java\jre1.8.0_201\lib\rt.jar;C:\Program Files\Java\jre1.8.0_201\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_201\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_201\lib\jce.jar;C:\Program Files\Java\jre1.8.0_201\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_201\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_201\classes
+java.ext.dir            : null
+java.classpath          : C:\Users\vendor5\Desktop\UATConnect.jar
+sun.boot.library.path   : C:\Program Files\Java\jre1.8.0_201\bin
+java.library.path       : C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\Program Files (x86)\nodejs\;.
+java.io.tmpdir          : C:\Users\vendor5\AppData\Local\Temp\4\
+sun.io.unicode.encoding : UnicodeLittle
+user.language           : en
+user.timezone           : Asia/Bangkok
+user.dir                : C:\Users\vendor5
+
+[ WARN] cmblogconfig.properties (the log configuration file) can not be found or an error was encountered while it was being read. (?ibmcmconfig.properties)
+
+
+
+[EXC]: 08/12/2019 at 03:27:10.904 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKUsageError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:listDataSources
+[MSG]: DGL0394A: Error in ::FileReader [cmbicmsrvs.ini (The system cannot find the file specified)]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.listDataSources(DKDatastoreICM.java:6671)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:1196)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 03:27:13.732 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-java.io.FileNotFoundException: cmbicmenv.ini (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3073)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[EXC]: 08/12/2019 at 03:27:13.748 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKDatastoreAccessError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 03:27:13.748 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-    ERROR:  The connect() operation has failed.  Before exiting the DKDatastoreICM.connect() operation, state changes will be rolled back.  Error caught: "DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]"
+
+
+[ERR]: 08/12/2019 at 03:27:13.748 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-com.ibm.mm.sdk.common.DKDatastoreAccessError: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:28)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+>>>>> Java connector logging started 08/12/2019 at 03:49:31.349 GMT
+
+CODEBASE                : ?
+OS version              : Windows Server 2012 R2 6.3
+java.vm                 : Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_201
+java.home               : C:\Program Files\Java\jre1.8.0_201
+sun.boot.class.path     : C:\Program Files\Java\jre1.8.0_201\lib\resources.jar;C:\Program Files\Java\jre1.8.0_201\lib\rt.jar;C:\Program Files\Java\jre1.8.0_201\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_201\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_201\lib\jce.jar;C:\Program Files\Java\jre1.8.0_201\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_201\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_201\classes
+java.ext.dir            : null
+java.classpath          : C:\Users\vendor5\Desktop\UATConnect.jar
+sun.boot.library.path   : C:\Program Files\Java\jre1.8.0_201\bin
+java.library.path       : C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\Program Files (x86)\nodejs\;.
+java.io.tmpdir          : C:\Users\vendor5\AppData\Local\Temp\4\
+sun.io.unicode.encoding : UnicodeLittle
+user.language           : en
+user.timezone           : Asia/Bangkok
+user.dir                : C:\Users\vendor5
+
+[ WARN] cmblogconfig.properties (the log configuration file) can not be found or an error was encountered while it was being read. (?ibmcmconfig.properties)
+
+
+
+[EXC]: 08/12/2019 at 03:49:32.431 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKUsageError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:listDataSources
+[MSG]: DGL0394A: Error in ::FileReader [cmbicmsrvs.ini (The system cannot find the file specified)]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.listDataSources(DKDatastoreICM.java:6671)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:1196)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 03:49:35.143 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-java.io.FileNotFoundException: cmbicmenv.ini (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3031)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 03:49:35.143 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-java.io.FileNotFoundException: cmbicmenv.ini (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3031)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[EXC]: 08/12/2019 at 03:49:35.143 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKDatastoreAccessError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 03:49:35.143 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-    ERROR:  The connect() operation has failed.  Before exiting the DKDatastoreICM.connect() operation, state changes will be rolled back.  Error caught: "DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]"
+
+
+[ERR]: 08/12/2019 at 03:49:35.143 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-com.ibm.mm.sdk.common.DKDatastoreAccessError: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+>>>>> Java connector logging started 08/12/2019 at 09:15:42.149 GMT
+
+CODEBASE                : ?
+OS version              : Windows Server 2012 R2 6.3
+java.vm                 : Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_201
+java.home               : C:\Program Files\Java\jre1.8.0_201
+sun.boot.class.path     : C:\Program Files\Java\jre1.8.0_201\lib\resources.jar;C:\Program Files\Java\jre1.8.0_201\lib\rt.jar;C:\Program Files\Java\jre1.8.0_201\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_201\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_201\lib\jce.jar;C:\Program Files\Java\jre1.8.0_201\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_201\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_201\classes
+java.ext.dir            : null
+java.classpath          : C:\Users\vendor5\Desktop\UATConnect.jar
+sun.boot.library.path   : C:\Program Files\Java\jre1.8.0_201\bin
+java.library.path       : C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\Program Files (x86)\nodejs\;.
+java.io.tmpdir          : C:\Users\vendor5\AppData\Local\Temp\4\
+sun.io.unicode.encoding : UnicodeLittle
+user.language           : en
+user.timezone           : Asia/Bangkok
+user.dir                : C:\Users\vendor5
+
+[ WARN] cmblogconfig.properties (the log configuration file) can not be found or an error was encountered while it was being read. (?ibmcmconfig.properties)
+
+
+
+[EXC]: 08/12/2019 at 09:15:43.253 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKUsageError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:listDataSources
+[MSG]: DGL0394A: Error in ::FileReader [cmbicmsrvs.ini (The system cannot find the file specified)]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.listDataSources(DKDatastoreICM.java:6671)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:1196)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 09:15:46.292 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-java.io.FileNotFoundException: cmbicmenv.ini (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3073)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[EXC]: 08/12/2019 at 09:15:46.296 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKDatastoreAccessError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 09:15:46.297 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-    ERROR:  The connect() operation has failed.  Before exiting the DKDatastoreICM.connect() operation, state changes will be rolled back.  Error caught: "DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]"
+
+
+[ERR]: 08/12/2019 at 09:15:46.299 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-com.ibm.mm.sdk.common.DKDatastoreAccessError: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+>>>>> Java connector logging started 08/12/2019 at 09:33:04.517 GMT
+
+CODEBASE                : ?
+OS version              : Windows Server 2012 R2 6.3
+java.vm                 : Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_201
+java.home               : C:\Program Files\Java\jre1.8.0_201
+sun.boot.class.path     : C:\Program Files\Java\jre1.8.0_201\lib\resources.jar;C:\Program Files\Java\jre1.8.0_201\lib\rt.jar;C:\Program Files\Java\jre1.8.0_201\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_201\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_201\lib\jce.jar;C:\Program Files\Java\jre1.8.0_201\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_201\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_201\classes
+java.ext.dir            : null
+java.classpath          : C:\Users\vendor5\Desktop\UATConnect.jar
+sun.boot.library.path   : C:\Program Files\Java\jre1.8.0_201\bin
+java.library.path       : C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\Program Files (x86)\nodejs\;.
+java.io.tmpdir          : C:\Users\vendor5\AppData\Local\Temp\4\
+sun.io.unicode.encoding : UnicodeLittle
+user.language           : en
+user.timezone           : Asia/Bangkok
+user.dir                : C:\Users\vendor5
+
+[ WARN] cmblogconfig.properties (the log configuration file) can not be found or an error was encountered while it was being read. (?ibmcmconfig.properties)
+
+
+
+[EXC]: 08/12/2019 at 09:33:05.628 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKUsageError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:listDataSources
+[MSG]: DGL0394A: Error in ::FileReader [cmbicmsrvs.ini (The system cannot find the file specified)]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.listDataSources(DKDatastoreICM.java:6671)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:1196)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 09:33:08.599 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-java.io.FileNotFoundException: cmbicmenv.ini (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3073)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[EXC]: 08/12/2019 at 09:33:08.604 GMT @ WIN-RJP0KPFNPVA (169.254.106.115); com.ibm.mm.sdk.common.DKDatastoreAccessError # com.ibm.mm.sdk.logtool.DKLogManagerFactory_default
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+
+
+[ERR]: 08/12/2019 at 09:33:08.604 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-    ERROR:  The connect() operation has failed.  Before exiting the DKDatastoreICM.connect() operation, state changes will be rolled back.  Error caught: "DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]"
+
+
+[ERR]: 08/12/2019 at 09:33:08.606 GMT @ WIN-RJP0KPFNPVA (169.254.106.115);  # com.ibm.mm.sdk.server.DKDatastoreICM
+[USR]: vendor5 (C:\Users\vendor5) @ C:\Users\vendor5
+[THD]: main ( 3ab39c39 )
+[THG]: main = { main, Timer-0 }
+[LOC]: com.ibm.mm.sdk.server.DKDatastoreICM:connect
+[MSG]: ?-?-?-com.ibm.mm.sdk.common.DKDatastoreAccessError: DGL0394A: Error in ::DriverManager.getConnection; cmbicmenv.ini (The system cannot find the file specified); [SERVER = icmnlsdb, USERID = icmconct]
+	at com.ibm.mm.sdk.server.DKDatastoreICM.connect(DKDatastoreICM.java:3179)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.connect(DKDatastoreICMConnection.java:29)
+	at hpt.has.shinhan.db2.DKDatastoreICMConnection.main(DKDatastoreICMConnection.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:61)
+
+

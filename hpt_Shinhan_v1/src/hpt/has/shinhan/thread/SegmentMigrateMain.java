@@ -11,7 +11,6 @@ import hpt.has.shinhan.db2.GenerateUniqueIDUsingGUID;
 import hpt.has.shinhan.db2.QueryDataDB2;
 import hpt.has.shinhan.file.DownloadFileURL;
 import hpt.has.shinhan.filenet.ConnectFilenet;
-import hpt.has.shinhan.filenet.CreateFolder;
 import hpt.has.shinhan.filenet.MetaData;
 import hpt.has.shinhan.filenet.UploadFilenet;
 import hpt.has.shinhan.oracle.ConnectionOracle;
@@ -146,7 +145,8 @@ public class SegmentMigrateMain extends Thread {
 					QueryDataDB2.ExcuteQueryInsert(conLog, insert2);
 					
 				}
-				else {
+				else 
+				{
 										
 					file = new File(dir);
 					
