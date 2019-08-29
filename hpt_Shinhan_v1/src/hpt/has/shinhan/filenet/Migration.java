@@ -6,8 +6,11 @@ import java.util.List;
 import hpt.has.shinhan.oracle.ConnectionOracle;
 import hpt.has.shinhan.oracle.QueryOracle;
 import hpt.has.shinhan.thread.DivideList;
+import hpt.has.shinhan.thread.DivideTime;
 import hpt.has.shinhan.thread.SegmentMigrate;
 import hpt.has.shinhan.thread.SegmentMigrateMain;
+import hpt.has.shinhan.thread.SegmentQuery;
+import hpt.has.shinhan.thread.Timespan;
 
 public class Migration {
 	
@@ -38,7 +41,7 @@ public class Migration {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Handler1(uri, username, password, optionalJAASStanzaName, objectName, doc_class, root, fol_class, host, port, data, user, pass, jdbcClassName1, url_file, url_log + CPEDB, userlog, passlog, jdbcClassName2, 4, "01-07-2019", "31-07-2019", 0, "App_Migration_28082019_02");
+		Handler2(uri, username, password, optionalJAASStanzaName, objectName, doc_class, root, fol_class, host, port, data, user, pass, jdbcClassName1, url_file, url_log + CPEDB, userlog, passlog, jdbcClassName2, 4, "30-06-2019", "31-07-2019", 0, "App_Migration_29082019_01");
 		
 	}
 	
@@ -89,6 +92,22 @@ public class Migration {
 		}
 		catch(Exception ex) {
 			System.out.println("hpt.has.shinhan.filenet.Migration.Handler1.Error Handler: " + ex);
+		}
+	}
+	
+	public static void Handler2(String _url_filenet, String _user_filenet, String _pass_filenet, String _optional_filenet, String _obj_filenet, String _class_doc, String _root_filenet, String _fol_filenet, String _url_oracle, String _port_oracle, String _data_name, String _user_oracle, String _pass_oracle, String _driver_oracle, String _url_get_file, String _url_DB2_Log, String _user_log, String _pass_log, String _driver_db2,  int _volume, String _from, String _to, int _rownum, String _appName) {
+		
+		try {	
+			
+			List<Timespan> dateList = DivideTime.divideTime(_from, _to, _volume);
+			
+			for(int i = 0; i < dateList.size(); i++) {				
+				SegmentQuery seg = new SegmentQuery(_url_filenet, _user_filenet, _pass_filenet, _optional_filenet, _obj_filenet, _class_doc, _root_filenet, _fol_filenet, _url_oracle, _port_oracle, _data_name, _user_oracle, _pass_oracle, _driver_oracle, _url_get_file, _url_DB2_Log, _user_log, _pass_log, _driver_db2, _volume, dateList.get(i).startDate, dateList.get(i).endDate, _rownum, _appName);
+				seg.start();
+			}
+		}
+		catch(Exception ex) {
+			System.out.println("hpt.has.shinhan.filenet.Migration.Handler2.Error Handler2: " + ex);
 		}
 	}
 }
